@@ -1,5 +1,5 @@
 # Projet : Plateforme de Gestion des Produits
-
+![alt text](image.png)
 ## Introduction
 
 Ce projet, réalisé dans le cadre du programme de technologie du génie informatique à La Cité Collégiale, est une application web permettant de gérer des produits via une interface intuitive. Elle permet la création, la mise à jour, la suppression et la consultation des produits tout en exploitant les fonctionnalités avancées de Spring Boot et de React.js.

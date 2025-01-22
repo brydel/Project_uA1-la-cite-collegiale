@@ -40,8 +40,8 @@ type Inputs = z.infer<typeof schema>;
 
 type ProductFormProps = {
   type: "create" | "update";
-  data?: Product; // Données du produit à mettre à jour
-  onSuccess?: () => void; // Fonction appelée après un succès
+  data?: Product; 
+  onSuccess?: () => void; 
 };
 
 const ProductForm: React.FC<ProductFormProps> = ({ type, data, onSuccess }) => {
@@ -61,16 +61,16 @@ const ProductForm: React.FC<ProductFormProps> = ({ type, data, onSuccess }) => {
     },
   });
 
-  const [open, setOpen] = useState(false); // Gère l'état du modal
+  const [open, setOpen] = useState(false); 
 
   // Soumission du formulaire
   const onSubmit = handleSubmit(async (formData) => {
     try {
-      // Vérifiez si l'API accepte un payload JSON
+      
       const response =
         type === "create"
-          ? await createProduct(formData) // Appel API pour création
-          : await updateProduct(data?._id, formData); // Appel API pour mise à jour
+          ? await createProduct(formData) 
+          : await updateProduct(data?._id, formData); 
   
       console.log("Produit ajouté/mis à jour avec succès :", response);
   
