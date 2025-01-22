@@ -8,7 +8,7 @@ import { createProduct, updateProduct } from "../../lib/api";
 import { Product } from "@/src/types/Product";
 import React, { useState } from "react";
 
-// Schéma de validation avec Zod
+// Schema de validation avec Zod
 const schema = z.object({
   name: z.string().min(1, { message: "Le nom du produit est requis." }),
   description: z
@@ -51,6 +51,7 @@ const ProductForm: React.FC<ProductFormProps> = ({ type, data, onSuccess }) => {
     formState: { errors },
   } = useForm<Inputs>({
     resolver: zodResolver(schema),
+    
     defaultValues: data || {
       name: "",
       description: "",

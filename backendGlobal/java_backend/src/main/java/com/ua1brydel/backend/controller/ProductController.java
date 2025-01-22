@@ -34,7 +34,7 @@ public class ProductController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Product> updateProduct(@PathVariable String id, @RequestBody Product product) {
-        System.out.println("ID reçu pour mise à jour : " + id); // Ajoutez ce log pour vérifier l'ID
+        System.out.println("ID reçu pour mise à jour : " + id);
         Optional<Product> existingProduct = productRepository.findById(id);
         if (existingProduct.isPresent()) {
             Product updatedProduct = existingProduct.get();

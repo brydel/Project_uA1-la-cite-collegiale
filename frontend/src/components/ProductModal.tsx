@@ -7,9 +7,7 @@ import { deleteProduct } from "../lib/api";
 import { Product } from "../types/Product";
 
 
-// const forms: { [key: string]: (type: "create" | "update", data?: any) => JSX.Element } = {
-//   product: (type, data) => <ProductForm type={type} data={data} />,
-// };
+
 
 const ProductModal = ({
   type,
