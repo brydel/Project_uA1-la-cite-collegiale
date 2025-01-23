@@ -63,4 +63,27 @@ router.delete('/:id', validateObjectId, async (req, res) => {
     }
 });
 
+
+// recherhce de produt
+router.get('/', async (req, res) => {
+    try{
+        const { keyword } = req.query;
+
+        const filters = {};
+
+        if(keyword){
+            filters.$or = [
+                { name: { $regex: keyword, $options: 'i' } },
+                { category: { $regex: keyword, $options: 'i' } },
+            ];
+        }
+        
+        const products = await Product.find(filters);
+        res.json(products);
+
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+});
+
 module.exports = router;
